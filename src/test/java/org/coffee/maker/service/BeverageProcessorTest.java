@@ -16,7 +16,7 @@ public class BeverageProcessorTest {
     @Test
     public void checkIsAllIngredientsPresentInMachineMethod() throws IOException, InterruptedException {
         CoffeeMachine coffeeMachine = objectMapper.readValue((Utils.getFileAsString("src/main/resources/sample.txt")), CoffeeMachine.class);
-        MachineManager.addToMachine(coffeeMachine.getAllIngredients());
+        BeverageProcessor.addToMachine(coffeeMachine.getAllIngredients());
         Map<String, Integer> beverageIngredients = new LinkedHashMap<>();
         beverageIngredients.put("hot_water", 50);
         beverageIngredients.put("hot_green_tea", 50);
@@ -27,7 +27,7 @@ public class BeverageProcessorTest {
     @Test
     public void checkGetBeverageMethod() throws IOException, InterruptedException {
         CoffeeMachine coffeeMachine = objectMapper.readValue((Utils.getFileAsString("src/main/resources/sample.txt")), CoffeeMachine.class);
-        MachineManager.addToMachine(coffeeMachine.getAllIngredients());
+        BeverageProcessor.addToMachine(coffeeMachine.getAllIngredients());
         Map<String, Integer> beverageIngredients = new LinkedHashMap<>();
         beverageIngredients.put("hot_water", 50);
         beverageIngredients.put("ginger_syrup", 10);
@@ -40,7 +40,7 @@ public class BeverageProcessorTest {
     @Test
     public void checkGetBeverageMethod2() throws IOException, InterruptedException {
         CoffeeMachine coffeeMachine = objectMapper.readValue((Utils.getFileAsString("src/main/resources/sample.txt")), CoffeeMachine.class);
-        MachineManager.addToMachine(coffeeMachine.getAllIngredients());
+        BeverageProcessor.addToMachine(coffeeMachine.getAllIngredients());
         Map<String, Integer> beverageIngredients = new LinkedHashMap<>();
         beverageIngredients.put("hot_water", 50);
         beverageIngredients.put("hot_milk", 550);

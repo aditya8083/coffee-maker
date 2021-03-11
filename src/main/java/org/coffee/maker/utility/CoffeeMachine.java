@@ -5,6 +5,7 @@ import com.fasterxml.jackson.annotation.JsonTypeInfo;
 import com.fasterxml.jackson.annotation.JsonTypeName;
 
 import java.util.LinkedHashMap;
+import java.util.HashMap;
 import java.util.Map;
 
 @JsonTypeInfo(include = JsonTypeInfo.As.WRAPPER_OBJECT, use = JsonTypeInfo.Id.NAME)
@@ -13,12 +14,12 @@ public class CoffeeMachine {
     @JsonProperty("outlets")
     private final MachineOutlet outlet;
     @JsonProperty("total_items_quantity")
-    private final LinkedHashMap<String, Integer> allIngredients;
+    private final HashMap<String, Integer> allIngredients;
     @JsonProperty("beverages")
     private final LinkedHashMap<String, Map<String, Integer>> allBeverages;
 
     public CoffeeMachine(@JsonProperty("outlets") MachineOutlet outlet,
-                         @JsonProperty("total_items_quantity") LinkedHashMap<String, Integer> allIngredients,
+                         @JsonProperty("total_items_quantity") HashMap<String, Integer> allIngredients,
                          @JsonProperty("beverages") LinkedHashMap<String, Map<String, Integer>> allBeverages) {
         this.outlet = outlet;
         this.allIngredients = allIngredients;
@@ -29,7 +30,7 @@ public class CoffeeMachine {
         return outlet;
     }
 
-    public LinkedHashMap<String, Integer> getAllIngredients() {
+    public HashMap<String, Integer> getAllIngredients() {
         return allIngredients;
     }
 
